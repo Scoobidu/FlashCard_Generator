@@ -1,0 +1,111 @@
+/* .input {
+  margin-right: 20px;
+} */
+
+.createInput {
+  width: 24rem;
+}
+
+textarea {
+  width: 80%;
+  resize: none;
+}
+
+textarea::placeholder {
+  opacity: 50%;
+  font-weight: 500;
+}
+
+.lowerCard {
+  opacity: 0.5;
+}
+.Description {
+  opacity: 0.5;
+}
+.numberTag {
+  color: white;
+  background-color: rgb(239 68 68);
+  font-size: 1.5rem;
+  line-height: 2rem;
+  border-radius: 100%;
+}
+.lowerInput {
+  width: 30%;
+}
+
+.image_sec {
+  display: flex;
+  align-items: center;
+  position: relative;
+  align-items: flex-end;
+}
+
+.sel_image {
+  position: absolute;
+}
+
+.sel_image button {
+  position: relative;
+  overflow: hidden;
+}
+
+.sel_image input {
+  transform: scale(3);
+  position: absolute;
+  left: 250px;
+  bottom: 20px;
+  opacity: 0;
+}
+
+.display_image {
+  display: none;
+  /* visibility: hidden; */
+  border: 1px solid black;
+  width: 200px;
+  height: 113px;
+}
+.image_sec img {
+  object-fit: cover;
+}
+
+.trash {
+  padding-top: 40px;
+}
+
+@media (max-width: 1000px) {
+  textarea {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .numberTag {
+    margin: 0;
+  }
+  .createInput {
+    width: 100%;
+  }
+  .lowerInput {
+    flex-direction: row;
+    width: 90%;
+    align-items: center;
+  }
+  .lowerInput label {
+    width: 9rem;
+  }
+  .lowerInput input {
+    width: 60%;
+  }
+  .selImgBtn {
+    margin-left: 10rem;
+  }
+  .addMore {
+    padding: 0 3rem;
+  }
+
+  .trash {
+    position: absolute;
+    top: -40px;
+    right: 0px;
+  }
+}
