@@ -1,19 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "../CSS/Header.css";
 
 function Header() {
+  const [activeNav, setActiveNav] = useState("Create New");
+  const location = useLocation();
+
   useEffect(() => {
-    var lnks = document.getElementsByClassName("lnk");
-    for (var i = 0; i < lnks.length; i++) {
-      lnks[i].addEventListener("click", function () {
-        var current = document.getElementsByClassName("active");
-        current[0].className = current[0].className.replace(" active", "");
-        this.className += " active";
-      });
+    // Update activeNav based on current URL path
+    if (location.pathname === "/") {
+      setActiveNav("Create New");
+    } else if (location.pathname === "/flashcards") {
+      setActiveNav("My Flashcard");
     }
-  });
+  }, [location.pathname]);
 
   return (
     <>
@@ -23,10 +24,18 @@ function Header() {
           {/* <div className='h2 flex space-x-10 px-3'><a className='page' href='#s'>Create New</a><a className='page' href='#s'>My Flashcard</a></div> */}
           <div className='relative nav-links h2'>
             <ul>
-              <li className='lnk active'>
+              <li
+                className={`lnk ${activeNav === "Create New" ? "active" : ""}`}
+                // onClick={() => setActiveNav("Create New")}
+              >
                 <Link to={`/`}>Create New</Link>
               </li>
-              <li className='lnk'>
+              <li
+                className={`lnk ${
+                  activeNav === "My Flashcard" ? "active" : ""
+                }`}
+                // onClick={() => setActiveNav("My Flashcard")}
+              >
                 <Link to={`/flashcards`}>My Flashcard</Link>
               </li>
             </ul>

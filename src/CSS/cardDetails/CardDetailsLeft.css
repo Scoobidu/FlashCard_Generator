@@ -1,0 +1,28 @@
+.all-cards {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.all-cards a {
+  margin-bottom: 10px;
+}
+.term {
+  cursor: pointer;
+}
+.active {
+  color: rgb(239 68 68);
+}
+
+@media (max-width: 750px) {
+  .h4 {
+    display: inline-block;
+  }
+  .all-cards {
+    flex-direction: row;
+  }
+  .all-cards p {
+    margin-bottom: 0;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}

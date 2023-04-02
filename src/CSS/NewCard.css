@@ -69,7 +69,13 @@ textarea::placeholder {
 }
 
 .trash {
-  padding-top: 40px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  color: rgb(239 68 68);
+  font-weight: 300;
+  font-size: 1.7rem;
+  align-self: center;
 }
 
 @media (max-width: 1000px) {
@@ -85,6 +91,9 @@ textarea::placeholder {
   .createInput {
     width: 100%;
   }
+  /* .lowerInputField {
+    width: 100%;
+  } */
   .lowerInput {
     flex-direction: row;
     width: 90%;
@@ -94,7 +103,7 @@ textarea::placeholder {
     width: 9rem;
   }
   .lowerInput input {
-    width: 60%;
+    width: 100%;
   }
   .selImgBtn {
     margin-left: 10rem;
@@ -103,9 +112,9 @@ textarea::placeholder {
     padding: 0 3rem;
   }
 
-  .trash {
+  /* .trash {
     position: absolute;
-    top: -40px;
+    top: -140px;
     right: 0px;
-  }
+  } */
 }

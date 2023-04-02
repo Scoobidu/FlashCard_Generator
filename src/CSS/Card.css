@@ -40,7 +40,7 @@
   color: rgb(239 68 68);
   text-align: right;
 }
-.overflow {
+.forOverflow {
   height: 48px;
 }
 .btn3 {
@@ -56,20 +56,13 @@
 .btns {
   display: flex;
 }
-.trash {
+.cardTrash {
   color: rgb(239 68 68);
   font-weight: 300;
   font-size: 1.7rem;
   align-self: center;
 }
-@media (max-width: 1000px) {
-  .wrapper {
-    width: 95%;
-    margin: auto;
 
-    gap: 20px;
-  }
-}
 @media (max-width: 1000px) {
   .wrapper {
     width: 80%;

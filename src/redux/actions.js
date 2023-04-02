@@ -1,21 +1,20 @@
 import { ActionTypes } from "./action-types";
 
-export const addCards = (name, description) => ({
+export const addCards = (data) => ({
   type: ActionTypes.ADD_CARDS,
-  payload: {
-    name: name,
-    description: description,
-  },
+  payload: data,
 });
-export const addCardsInCards = (card) => ({
-  type: ActionTypes.ADD_CARDS_IN_cards,
-  payload: {
-    card: card,
-  },
-});
+
 export const removeAllCard = (id) => {
   return {
     type: ActionTypes.REMOVE_CARD,
     payload: { id: id },
+  };
+};
+
+export const addLocalCards = (data) => {
+  return {
+    type: ActionTypes.ADD_LOCAL_CARD,
+    payload: data,
   };
 };
