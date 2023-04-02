@@ -31,10 +31,10 @@ const Modal = ({ cardId, visible, setVisible, handleClose, notify }) => {
               Link:
               <a
                 ref={copiedLink}
-                href={`https://Bobby/${cardId}`}
+                href={`https://flashcard-generatoe.netlify.app/flashcards/${cardId}`}
                 className='ml-1 text-blue-500'
               >
-                {`https://Bobby/${cardId}`}
+                {`https://flashcard-generatoe.netlify.app/flashcards/${cardId}`}
               </a>
             </p>
           </div>
