@@ -25,7 +25,7 @@ Here we can see the created cards in particular flashcard, we can navigate throu
 
 ![details](https://user-images.githubusercontent.com/102259781/229379471-1e3bd39b-68fe-44d4-ba41-faead8761c21.PNG)
 
-open [https://flashcard-generatoe.netlify.app/](http://localhost:3000](https://flashcard-generatoe.netlify.app/) to view it in your browser.
+open [https://flashcard-generatoe.netlify.app/](https://flashcard-generatoe.netlify.app/) to view it in your browser.
 
 In the project directory, you can run:
 
