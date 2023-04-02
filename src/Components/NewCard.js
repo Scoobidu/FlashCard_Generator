@@ -8,6 +8,7 @@ import { addCards } from "../redux/actions";
 // import { MdOutlineUploadFile } from "react-icons/md";
 import { GoTrashcan } from "react-icons/go";
 import "../CSS/NewCard.css";
+import "../CSS/App.css";
 
 // import uuid from "react-uuid";
 
@@ -287,7 +288,7 @@ function NewCard() {
                 </div>
                 <div className='pt-14 pb-20'>
                   <button
-                    className='createBtn btn2 block mx-auto hover:bg-red-500 hover:text-white border-red-500 border-2 hover:-translate-y-1 shadow-lg transition-all ease-in-out duration-150'
+                    className='createBtn btn2 block mx-auto bg-red-500 hover:bg-red-500 hover:text-white border-red-500 border-2 hover:-translate-y-1 shadow-lg transition-all ease-in-out duration-150'
                     disabled={!active}
                     type='submit'
                     name='create'

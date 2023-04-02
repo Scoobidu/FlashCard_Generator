@@ -16,7 +16,7 @@ const Card = (props) => {
     }
   };
   return (
-    <div className='self_box relative py-5 px-11 border-red-500 border-2 hover:-translate-y-1 shadow-lg transition-all ease-in-out duration-150'>
+    <div className='self_box relative py-5 px-11  hover:-translate-y-1 shadow-lg transition-all ease-in-out duration-150'>
       {/* <button className='bg-red-400 w-28 border rounded-full'></button> */}
       <div className='card text-center'>
         {/* <img
