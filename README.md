@@ -1,8 +1,31 @@
-# Getting Started with Create React App
+# `Flashcard Generator`
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a frontend project assignment from Almabetter. It is a flashcard generator app which helps in creating multiple flashcards in a group. This app lets us `create`, `share`, `download`, `delete` and `print` the created flashcards, The user interface of this app is completely responsive.
 
-## Available Scripts
+## `Description`
+This project was created individually by me, utilizing a variety of frontend technologies namely `React` a powerful JavaScript library, as well as `Tailwind CSS` to ensure that the user interface is responsive, I utilized `Redux` for efficient state management, and included `React-icons`, `Formik` and `react-testing-library` for testing purposes. Languages used in this project are `HTML`, `CSS`, `JavaScript`. Finally, the project was deployed using `Netlify`.
+
+This Project Consists of 3 Pages.
+
+  1. `Create New Page` (Home Page)
+
+Here we create new group of cards by filling all the required details and then clicking the create button.
+
+![create new](https://user-images.githubusercontent.com/102259781/229379211-97134b17-8af6-4c2a-8c36-64f6c812c5dc.PNG)
+
+  2. `My FlashCard Page` 
+
+Here we can see all the created flashcards which having heading of the group , little description, total number of cards, button to delete that card group and a button for viewing the cards on next page.
+
+![allCards](https://user-images.githubusercontent.com/102259781/229379322-19b0a42e-7f64-4cd5-b887-8dd46e197ae1.PNG)
+
+  3. `FlashCard Details Page`
+
+Here we can see the created cards in particular flashcard, we can navigate through different cards either by clicking on terms given to the card while creating flashcard or by using carosel, we can also share, print and download the flashcard.
+
+![details](https://user-images.githubusercontent.com/102259781/229379471-1e3bd39b-68fe-44d4-ba41-faead8761c21.PNG)
+
+open [https://flashcard-generatoe.netlify.app/](http://localhost:3000](https://flashcard-generatoe.netlify.app/) to view it in your browser.
 
 In the project directory, you can run:
 
@@ -19,52 +42,3 @@ You may also see any lint errors in the console.
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
