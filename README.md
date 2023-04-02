@@ -7,19 +7,19 @@ This project was created individually by me, utilizing a variety of frontend tec
 
 This Project Consists of 3 Pages.
 
-  1. `Create New Page` (Home Page)
+  ## 1. `Create New Page` (Home Page)
 
 Here we create new group of cards by filling all the required details and then clicking the create button.
 
 ![create new](https://user-images.githubusercontent.com/102259781/229379211-97134b17-8af6-4c2a-8c36-64f6c812c5dc.PNG)
 
-  2. `My FlashCard Page` 
+  ## 2. `My FlashCard Page` 
 
 Here we can see all the created flashcards which having heading of the group , little description, total number of cards, button to delete that card group and a button for viewing the cards on next page.
 
 ![allCards](https://user-images.githubusercontent.com/102259781/229379322-19b0a42e-7f64-4cd5-b887-8dd46e197ae1.PNG)
 
-  3. `FlashCard Details Page`
+  ## 3. `FlashCard Details Page`
 
 Here we can see the created cards in particular flashcard, we can navigate through different cards either by clicking on terms given to the card while creating flashcard or by using carosel, we can also share, print and download the flashcard.
 
