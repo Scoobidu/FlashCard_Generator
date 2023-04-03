@@ -1,6 +1,7 @@
 import { ActionTypes } from "./action-types";
 
 let Flashcards = [];
+let randomNum = Math.floor(Math.random() * 90) + 10;
 
 export function reducer(state = Flashcards, action) {
   switch (action.type) {
@@ -10,7 +11,8 @@ export function reducer(state = Flashcards, action) {
         JSON.stringify([
           ...state,
           {
-            id: Math.random(),
+            // id: Math.random(),
+            id: `${action.payload.group}${randomNum}`,
             group: action.payload.group,
             description: action.payload.description,
             cards: action.payload.cards,
@@ -20,7 +22,8 @@ export function reducer(state = Flashcards, action) {
       return [
         ...state,
         {
-          id: Math.random(),
+          // id: Math.random(),
+          id: `${action.payload.group}${randomNum}`,
           group: action.payload.group,
           description: action.payload.description,
           cards: action.payload.cards,

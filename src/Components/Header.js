@@ -13,6 +13,8 @@ function Header() {
       setActiveNav("Create New");
     } else if (location.pathname === "/flashcards") {
       setActiveNav("My Flashcard");
+    } else {
+      setActiveNav("");
     }
   }, [location.pathname]);
 

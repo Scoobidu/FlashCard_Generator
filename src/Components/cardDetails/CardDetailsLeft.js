@@ -8,7 +8,7 @@ function CardDetailsLeft(props) {
     return (
       <a
         key={card.id}
-        className={` ${card.term === props.activeCard ? "active" : ""}`}
+        className={` ${card.term === props.activeCard ? "active" : ""} `}
         onClick={() => {
           props.setSelectID(card.id);
           props.setActiveCard(card.term);
