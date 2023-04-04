@@ -1,6 +1,6 @@
 # `Flashcard Generator`
 
-This is a frontend project assignment from Almabetter. It is a flashcard generator app which helps in creating multiple flashcards in a group. This app lets us `create`, `share`, `download`, `delete` and `print` the created flashcards, The user interface of this app is completely responsive.
+This is a frontend project assignment from Almabetter. It is a flashcard generator app which helps in creating multiple flashcards in a group. This app lets us `create`, `share`, `download` and `delete` the created flashcards, The user interface of this app is completely responsive.
 
 ## `Description`
 This project was created individually by me, utilizing a variety of frontend technologies namely `React` a powerful JavaScript library, as well as `Tailwind CSS` to ensure that the user interface is responsive, I utilized `Redux` for efficient state management, and included `React-icons`, `Formik` and `react-testing-library` for testing purposes. Languages used in this project are `HTML`, `CSS`, `JavaScript`. Finally, the project was deployed using `Netlify`.
@@ -21,7 +21,7 @@ Here we can see all the created flashcards which having heading of the group , l
 
   ## 3. `FlashCard Details Page`
 
-Here we can see the created cards in particular flashcard, we can navigate through different cards either by clicking on terms given to the card while creating flashcard or by using carosel, we can also share, print and download the flashcard.
+Here we can see the created cards in particular flashcard, we can navigate through different cards either by clicking on terms given to the card while creating flashcard or by using carosel, we can also share and download the flashcard.
 
 ![details](https://user-images.githubusercontent.com/102259781/229379471-1e3bd39b-68fe-44d4-ba41-faead8761c21.PNG)
 
