@@ -180,7 +180,7 @@ function NewCard() {
                                     {index + 1}
                                   </button>
                                 </div>
-                                <div className='lowerInput flex flex-col space-y-3'>
+                                <div className='lowerInput space-y-3'>
                                   <label
                                     className='h3'
                                     htmlFor={`cards.${index}.term`}
