@@ -7,6 +7,7 @@ import store from "../redux/store";
 import { addCards } from "../redux/actions";
 // import { MdOutlineUploadFile } from "react-icons/md";
 import { GoTrashcan } from "react-icons/go";
+import { FiEdit } from "react-icons/fi";
 import "../CSS/NewCard.css";
 import "../CSS/App.css";
 
@@ -89,15 +90,18 @@ function NewCard() {
                 .max(15, "Must be 15 character or less")
                 .required("Required"),
 
-              description: string(),
-              // .required("Required"),
+              description: string()
+                .max(15, "Must be 300 character or less")
+                .required("Required"),
 
               cards: array(
                 object({
                   term: string()
                     .max(15, "Must be 15 character or less")
                     .required("Required"),
-                  defination: string().required("Required"),
+                  defination: string()
+                    .max(15, "Must be 300 character or less")
+                    .required("Required"),
                 })
               ),
             })}
@@ -185,6 +189,7 @@ function NewCard() {
                                   </label>
                                   <div className='flex flex-col'>
                                     <input
+                                      id={`term${index}`}
                                       className='terms input leading-8'
                                       disabled={!active}
                                       type='text'
@@ -236,16 +241,29 @@ function NewCard() {
                                   </div>
                                 </div>
                                 {/* <div className='relative'> */}
-                                <button
-                                  disabled={!active}
-                                  className='trash hover:-translate-y-1 transition-all ease-in-out duration-150'
-                                  onClick={() => {
-                                    arrayHelpers.remove(index);
-                                    // store.dispatch(removeAllCard(id));
-                                  }}
-                                >
-                                  <GoTrashcan />
-                                </button>
+                                <div className='trash flex gap-2'>
+                                  <button
+                                    disabled={!active}
+                                    className='text-2xl text-blue-600 hover:-translate-y-1 transition-all ease-in-out duration-150'
+                                    onClick={() => {
+                                      const field = document.getElementById(
+                                        `term${index}`
+                                      );
+                                      field.focus();
+                                    }}
+                                  >
+                                    <FiEdit />
+                                  </button>
+                                  <button
+                                    disabled={!active}
+                                    className=' hover:-translate-y-1 transition-all ease-in-out duration-150'
+                                    onClick={() => {
+                                      arrayHelpers.remove(index);
+                                    }}
+                                  >
+                                    <GoTrashcan />
+                                  </button>
+                                </div>
                                 {/* </div> */}
                               </div>
                             ))
