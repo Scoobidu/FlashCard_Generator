@@ -91,7 +91,7 @@ function NewCard() {
                 .required("Required"),
 
               description: string()
-                .max(15, "Must be 300 character or less")
+                .max(500, "Must be 300 character or less")
                 .required("Required"),
 
               cards: array(
@@ -100,7 +100,7 @@ function NewCard() {
                     .max(15, "Must be 15 character or less")
                     .required("Required"),
                   defination: string()
-                    .max(15, "Must be 300 character or less")
+                    .max(500, "Must be 300 character or less")
                     .required("Required"),
                 })
               ),
@@ -210,7 +210,7 @@ function NewCard() {
                                     </div>
                                   </div>
                                 </div>
-                                <div className='lowerInput flex flex-col space-y-3'>
+                                <div className='lowerInput space-y-3'>
                                   <label
                                     className='h3 '
                                     htmlFor={`cards.${index}.defination`}
@@ -243,6 +243,7 @@ function NewCard() {
                                 {/* <div className='relative'> */}
                                 <div className='trash flex gap-2'>
                                   <button
+                                    type='button'
                                     disabled={!active}
                                     className='text-2xl text-blue-600 hover:-translate-y-1 transition-all ease-in-out duration-150'
                                     onClick={() => {
@@ -255,6 +256,7 @@ function NewCard() {
                                     <FiEdit />
                                   </button>
                                   <button
+                                    type='button'
                                     disabled={!active}
                                     className=' hover:-translate-y-1 transition-all ease-in-out duration-150'
                                     onClick={() => {

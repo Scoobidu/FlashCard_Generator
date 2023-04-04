@@ -73,7 +73,7 @@ textarea::placeholder {
   max-height: 200px;
   width: 100%;
   min-width: 100%;
-  max-width: 400px;
+  max-width: 200%;
 
   padding: 0.25rem 0.75rem;
   font-size: 1.125rem;
@@ -84,7 +84,7 @@ textarea::placeholder {
 
 .lowerInputField:focus {
   /* Increase the height and width of the input field */
-  min-width: 400px;
+  min-width: 100%;
   min-height: 100px;
 
   /* Style it to look like a tsextarea */
@@ -138,6 +138,9 @@ textarea::placeholder {
   }
   .addMore {
     padding: 0 3rem;
+  }
+  .lowerInputField {
+    max-width: 100%;
   }
 
   /* .trash {
