@@ -111,6 +111,18 @@ function CardDetails_right({ cardId }) {
       theme: "light",
     });
   };
+  const notifyfail = (val) => {
+    toast.error(val, {
+      position: "top-center",
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+    });
+  };
 
   return (
     <div className='all-buttons select-none'>
@@ -143,7 +155,7 @@ function CardDetails_right({ cardId }) {
       <div
         className='box2 hover:bg-red-500 hover:text-white focus:ring-4 hover:-translate-y-1  transition-all ease-in-out duration-150'
         onClick={() => {
-          notify("unable to print");
+          notifyfail("unable to print");
           printCard();
         }}
       >
