@@ -1,25 +1,21 @@
 import React, { useEffect, useState } from "react";
-import { Form, Field, Formik, FieldArray, ErrorMessage } from "formik";
+import { Form, Formik, FieldArray, ErrorMessage } from "formik";
 import { string, object, array } from "yup";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import store from "../redux/store";
 import { addCards } from "../redux/actions";
-// import { MdOutlineUploadFile } from "react-icons/md";
 import { GoTrashcan } from "react-icons/go";
 import { FiEdit } from "react-icons/fi";
 import "../CSS/NewCard.css";
 import "../CSS/App.css";
 
-// import uuid from "react-uuid";
-
 function NewCard() {
   const [group, setGroup] = useState("");
   const [active, setActive] = useState(false);
-  // let uniqId = uuid();
 
+  //--------- setting form structure -----------
   const initialValues = {
-    // id: uniqId,
     group: "",
     description: "",
     cards: [
@@ -31,6 +27,7 @@ function NewCard() {
     ],
   };
 
+  //--------- on submitting form ----------
   const onSubmit = (values, { resetForm, setSubmitting }) => {
     // console.log("Form Data ", values);
     notify("Submitted");
@@ -39,6 +36,7 @@ function NewCard() {
     resetForm();
   };
 
+  //--------- notifier ----------
   const notify = (val) => {
     toast.success(val, {
       position: "top-center",
@@ -52,6 +50,7 @@ function NewCard() {
     });
   };
 
+  //-------- if groupname is empty disable everthing -------
   useEffect(() => {
     const lowerCard = document.querySelector(".lowerCard");
     const Desc = document.querySelector(".Description");
@@ -74,14 +73,6 @@ function NewCard() {
     <>
       <div className='outer relative'>
         <div className='pb-5'>
-          {/* <button
-            className='createBtn btn2 block mx-auto hover:bg-red-500 hover:text-white border-red-500 border-2 focus:ring-4 focus:outline-none focus:ring-red-300 hover:-translate-y-1 shadow-lg transition-all ease-in-out duration-150'
-            type='button'
-            onClick={() => notify("sa")}
-          >
-            Notify!
-          </button> */}
-
           <Formik
             initialValues={initialValues}
             // -------------using yup for validation ---------
@@ -91,7 +82,7 @@ function NewCard() {
                 .required("Required"),
 
               description: string()
-                .max(500, "Must be 300 character or less")
+                .max(500, "Must be 500 character or less")
                 .required("Required"),
 
               cards: array(
@@ -100,7 +91,7 @@ function NewCard() {
                     .max(15, "Must be 15 character or less")
                     .required("Required"),
                   defination: string()
-                    .max(500, "Must be 300 character or less")
+                    .max(500, "Must be 500 character or less")
                     .required("Required"),
                 })
               ),
@@ -110,6 +101,7 @@ function NewCard() {
             {({ values, handleChange, setFieldValue }) => (
               <Form>
                 <div className='box py-5 px-11 mb-6'>
+                  {/*---------- Groupname field -------------*/}
                   <div className='my-2'>
                     <label className='h3 ' htmlFor='Create'>
                       Create Group*
@@ -127,14 +119,13 @@ function NewCard() {
                         onChange={(e) => setGroup(e.target.value)}
                         onInput={handleChange}
                       />
+                      {/*----- if groupname is empty -------*/}
                       <div className='text-red-500'>
                         <ErrorMessage name='group' />
                       </div>
                     </div>
-
-                    {/* ------dont need this button -----------*/}
-                    {/* <button id='button' className='btn1 w-48'><div className='flex justify-center'><h1 className='text-3xl'><MdOutlineUploadFile /></h1><h3 className='pt-1 '>Upload Image</h3></div></button> */}
                   </div>
+                  {/*---------- Description field -------------*/}
                   <div className='Description'>
                     <div className='my-2'>
                       <label className='h3 ' htmlFor='description'>
@@ -153,12 +144,14 @@ function NewCard() {
                         rows='5'
                         placeholder='Describe the roles , responsibility , skills required for the job and help candidate understand the role better.'
                       ></textarea>
+                      {/*----- if description is empty -------*/}
                       <div className=' text-red-500'>
                         <ErrorMessage name='description' />
                       </div>
                     </div>
                   </div>
                 </div>
+                {/* ---------------------------------------------------------- */}
                 {/* ------  Lower Card  ------ */}
                 <div className='box py-5 px-9'>
                   <div className='lowerCard'>
@@ -166,6 +159,7 @@ function NewCard() {
                       name='cards'
                       render={(arrayHelpers) => (
                         <>
+                          {/*--------- checking if cards are present if not show add card btn --------*/}
                           {values.cards && values.cards.length > 0 ? (
                             values.cards.map((cardItem, index) => (
                               <div
@@ -173,13 +167,11 @@ function NewCard() {
                                 key={index}
                               >
                                 <div className=''>
-                                  <button
-                                    // className='numberTag px-3 mt-2 mb-8'
-                                    className='bg-red-500 px-2 rounded-full  text-white'
-                                  >
+                                  <button className='bg-red-500 px-2 rounded-full  text-white'>
                                     {index + 1}
                                   </button>
                                 </div>
+                                {/*---------- Term Field ------------*/}
                                 <div className='lowerInput space-y-3'>
                                   <label
                                     className='h3'
@@ -203,6 +195,7 @@ function NewCard() {
                                       }
                                       value={cardItem.term}
                                     />
+                                    {/*----- if term is empty -------*/}
                                     <div className='text-red-500'>
                                       <ErrorMessage
                                         name={`cards.${index}.term`}
@@ -210,6 +203,7 @@ function NewCard() {
                                     </div>
                                   </div>
                                 </div>
+                                {/*---------- Definition Field ------------*/}
                                 <div className='lowerInput space-y-3'>
                                   <label
                                     className='h3 '
@@ -233,6 +227,7 @@ function NewCard() {
                                       }
                                       value={cardItem.defination}
                                     />
+                                    {/*----- if definition is empty -------*/}
                                     <div className='text-red-500'>
                                       <ErrorMessage
                                         name={`cards.${index}.defination`}
@@ -240,8 +235,8 @@ function NewCard() {
                                     </div>
                                   </div>
                                 </div>
-                                {/* <div className='relative'> */}
                                 <div className='trash flex gap-2'>
+                                  {/*------- edit button cards --------*/}
                                   <button
                                     type='button'
                                     disabled={!active}
@@ -255,6 +250,8 @@ function NewCard() {
                                   >
                                     <FiEdit />
                                   </button>
+
+                                  {/*---------- delete card button ---------*/}
                                   <button
                                     type='button'
                                     disabled={!active}
@@ -266,10 +263,10 @@ function NewCard() {
                                     <GoTrashcan />
                                   </button>
                                 </div>
-                                {/* </div> */}
                               </div>
                             ))
                           ) : (
+                            //--------- show this if user removes all cards ---------
                             <button
                               type='button'
                               disabled={!active}
@@ -282,11 +279,10 @@ function NewCard() {
                                 })
                               }
                             >
-                              {/* show this when user has removed all friends from the list */}
                               Add Card
                             </button>
                           )}
-
+                          {/*--------- add more cards button ---------*/}
                           <button
                             className='addMore font-semibold text-blue-600 pt-6 pb-4 px-14'
                             disabled={!active}
@@ -307,6 +303,7 @@ function NewCard() {
                   </div>
                 </div>
                 <div className='pt-14 pb-20'>
+                  {/*--------- submit button ----------*/}
                   <button
                     className='createBtn btn2 block mx-auto bg-red-500 hover:bg-red-500 hover:text-white border-red-500 border-2 hover:-translate-y-1 shadow-lg transition-all ease-in-out duration-150'
                     disabled={!active}

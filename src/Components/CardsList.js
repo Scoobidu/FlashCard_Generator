@@ -8,6 +8,7 @@ import { useSelector } from "react-redux";
 function Cards() {
   const Flashcards = useSelector((state) => state);
 
+  //------------- notifier ---------------
   const notify = (val) => {
     toast.success(val, {
       position: "top-center",
@@ -21,32 +22,25 @@ function Cards() {
     });
   };
 
+  //------ mapping all flashcards ----------
   const RenderAllCards = Flashcards.map((Flashcard) => {
-    return (
-      <Card
-        // key={Flashcard.id}
-        key={Math.random()}
-        Flashcard={Flashcard}
-        notify={notify}
-      />
-    );
+    return <Card key={Math.random()} Flashcard={Flashcard} notify={notify} />;
   });
 
   return (
     <div>
       <div className='outer relative h-screen'>
-        <div className='wrapper pt-20'>
-          {/* <div className='grid grid-rows-2 grid-flow-col gap-10 pt-20'> */}
-          {RenderAllCards}
-        </div>
+        {/*---------- rendering all flashcards ------------*/}
+        <div className='wrapper pt-20'>{RenderAllCards}</div>
         {Flashcards.length ? (
           ""
         ) : (
+          //-------------- if no cards to show ---------------
           <div className=' relative'>
             <h1 className='text-center text-xl font-bold text-slate-600  '>
               No Cards To Show!!
             </h1>
-            {/* <img className='mx-auto' src={cards} alt='logo' /> */}
+            {/*----------- button to go to ome page ------------*/}
             <Link
               to={"/"}
               className=' w-48  mt-5 createBtn btn2 block mx-auto hover:bg-red-500 hover:text-white border-red-500 border-2 focus:ring-4 focus:outline-none focus:ring-red-300 hover:-translate-y-1 shadow-lg transition-all ease-in-out duration-150'

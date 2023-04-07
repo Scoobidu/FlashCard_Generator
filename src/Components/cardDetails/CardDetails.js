@@ -9,54 +9,51 @@ import { useSelector } from "react-redux";
 import { useState } from "react";
 
 function CardDetails() {
+  //----------- getting Flashcard id for diaplaying details ------------
   const { cardId } = useParams();
   const Flashcards = useSelector((state) => state);
 
+  //---------- filtering flashcard from all flashcards -------------
   const details = Flashcards.filter((card) => card.id == cardId);
+
   const [selectID, setSelectID] = useState("");
   const [activeCard, setActiveCard] = useState("");
 
   useEffect(() => {
+    //----------- if details present display first's term & defination -----------
     setSelectID(details.length ? details[0].cards[0].id : "");
     setActiveCard(details.length ? details[0].cards[0].term : "");
   }, [details.length]);
 
-  // Check if the details array is defined and not empty
-  // if (!details || details.length === 0) {
-  //   return (
-  //     <div className='outer relative '>
-  //       <p>Loading</p>
-  //     </div>
-  //   );
-  // }
-
   const { group, description } = details.length > 0 ? details[0] : {};
   return (
     <>
+      {/*----------- if details not presesnt show loading -------------*/}
       {!details || details.length === 0 ? (
         <div className='outer relative '>
           <p>Loading</p>
         </div>
       ) : (
         <>
-          {/* <h1>almabetter</h1> */}
           <div className='outer relative'>
-            {/* ---------myCard-Header-------- */}
             <div className='flex space-x-5 px-3'>
+              {/*-------- button to go to myflashcard page --------*/}
               <Link to={`/flashcards`}>
                 <h1 className='text-3xl pt-3 text-gray-700'>
                   <MdOutlineKeyboardBackspace />
                 </h1>
               </Link>
               <div>
+                {/*---------- displaying groupname and description ------------*/}
                 <h1 className='h1 card-heading'>{group}</h1>
                 <p className='h4'>{description}</p>
               </div>
             </div>
-            {/* -----------Cards----------- */}
+            {/* -------------------Cards------------------ */}
             <div className='all-sec'>
               <div className='left'>
                 <div className='box2'>
+                  {/*---------- terms sidebar ------------*/}
                   <CardDetailsLeft
                     details={details}
                     selectID={selectID}
@@ -68,6 +65,7 @@ function CardDetails() {
               </div>
               <div className='center'>
                 <div>
+                  {/*--------- display definition of selected terms here ------------*/}
                   <CardDetailsMiddle
                     details={details}
                     leftSelected={selectID}
@@ -79,6 +77,7 @@ function CardDetails() {
               </div>
               <div className='right'>
                 <div>
+                  {/*---------- share , download , print button ----------*/}
                   <CardDetailsRight cardId={cardId} />
                 </div>
               </div>

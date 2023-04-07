@@ -13,15 +13,16 @@ import "../../CSS/cardDetails/CardDetailsRight.css";
 
 function CardDetails_right({ cardId }) {
   const Flashcards = useSelector((state) => state);
-  // const flashRef = useRef(null);
   const details = Flashcards.filter((card) => card.id == cardId);
   const { group, description, cards } = details.length > 0 ? details[0] : {};
 
   const [showModal, setShowModal] = useState(false);
 
+  //------------- download card function -------------
   const toPdf = () => {
     const flashcardPdf = new jsPDF("portrait", "px", "a4", "true");
 
+    //styling download page
     flashcardPdf.setFillColor(239, 68, 68); //  background color
     flashcardPdf.rect(
       20,
@@ -55,7 +56,7 @@ function CardDetails_right({ cardId }) {
       descriptionY += 15; // increase the margin for the next line of text
     }
 
-    // tyling for the heading
+    // styling for the heading
     let alltermsY = descriptionY + 10;
     flashcardPdf.setFillColor(239, 68, 68); // background color
     flashcardPdf.rect(
@@ -86,6 +87,7 @@ function CardDetails_right({ cardId }) {
     notify("File Downloaded");
   };
 
+  //------- print card function -------------
   const printCard = () => {
     // useReactToPrint({
     //   //   // ref is not initialized
@@ -118,6 +120,7 @@ function CardDetails_right({ cardId }) {
           setShowModal(true);
         }}
       >
+        {/*-------------- share btn ------------------*/}
         <button className='flex '>
           <span className='pt-1 pr-4'>
             <MdOutlineShare />
@@ -129,6 +132,7 @@ function CardDetails_right({ cardId }) {
         className='box2 hover:bg-red-500 hover:text-white focus:ring-4 hover:-translate-y-1  transition-all ease-in-out duration-150'
         onClick={toPdf}
       >
+        {/*-------------- download btn ------------------*/}
         <button className='flex'>
           <span className='text-xl pr-4 '>
             <HiOutlineDownload />
@@ -143,6 +147,7 @@ function CardDetails_right({ cardId }) {
           printCard();
         }}
       >
+        {/*-------------- print btn ------------------*/}
         <button className='flex'>
           <span className='text-xl pt-1 pr-4'>
             <AiOutlinePrinter />
@@ -150,6 +155,7 @@ function CardDetails_right({ cardId }) {
           Print
         </button>
       </div>
+      {/*------------- modal to copy link -------------*/}
       <Modal
         notify={notify}
         cardId={cardId}

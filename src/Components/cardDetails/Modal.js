@@ -5,6 +5,7 @@ const Modal = ({ cardId, visible, setVisible, handleClose, notify }) => {
   const copiedLink = useRef("");
 
   const handleCopy = () => {
+    //--------- copying url -----------
     navigator.clipboard.writeText(copiedLink.current.href);
     notify("Linked Copied to Clipboard");
     setVisible(false);
@@ -15,10 +16,10 @@ const Modal = ({ cardId, visible, setVisible, handleClose, notify }) => {
   return (
     <div
       id='dismiss'
-      //   onClick={(e) => handleClose(e)}
       className='fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex justify-center items-center'
     >
       <div className='bg-white relative rounded-md w-72 md:w-96'>
+        {/*----------- closing modal button ------------*/}
         <FaTimes
           id='dismiss-x'
           className=' absolute right-3 p-1 text-gray-500 hover:text-red-500  top-3'
@@ -38,6 +39,7 @@ const Modal = ({ cardId, visible, setVisible, handleClose, notify }) => {
               </a>
             </p>
           </div>
+          {/*------------ button to copy url ------------*/}
           <FaRegCopy
             onClick={handleCopy}
             className='text-gray-500 text-lg hover:text-blue-500 hover:-translate-y-px transition-all ease-in-out'

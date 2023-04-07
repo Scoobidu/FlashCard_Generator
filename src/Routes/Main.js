@@ -8,7 +8,7 @@ import store from "../redux/store";
 import { addLocalCards } from "../redux/actions";
 
 export const Main = () => {
-  // getting local storage data
+  //--------- getting local storage data ------------
   useEffect(() => {
     const data = JSON.parse(localStorage.getItem("allCards"));
     if (data) store.dispatch(addLocalCards(data));

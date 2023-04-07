@@ -8,7 +8,6 @@ import logo from "./Images/logo.png";
 function App() {
   return (
     <div>
-      {/* <input type='text' class='input-field' placeholder='Type here...'></input> */}
       {/* ---------navbar--------- */}
       <nav className=' relative'>
         <div className='z-10 fixed bg-white w-full '>
